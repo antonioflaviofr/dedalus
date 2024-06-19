@@ -1,0 +1,17 @@
+# action.yml
+name: 'Action'
+description: ''
+inputs:
+  parent-dir:  # id of input
+    description: 'Input parent dir'
+    required: true
+    default: '/var/opt/dedalus/userdata'
+outputs:
+  subdir: # id of output
+    description: 'Longest subdir name'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.parent-dir }}
+
