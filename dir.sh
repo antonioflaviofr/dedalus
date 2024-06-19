@@ -3,8 +3,7 @@ IFS=$'\n'
 
 big=""
 
-echo "Input path:"
-read path
+path=$1
 
 for i in `ls -R $path | grep /`
 do
@@ -17,4 +16,4 @@ do
   done
 done
 
-echo "The longest subdirectory name under \"$path\" is: \"$big\"" | tee $GITHUB_OUTPUT
+echo "subdir=$big" | tee $GITHUB_OUTPUT
